@@ -40,8 +40,8 @@ if($fromform=$mform->get_data()){
     $insertrecord->firstname=$fromform->firstname;
     $insertrecord->lastname=$fromform->lastname;
     $insertrecord->email=$fromform->email;
-    $insertrecord->timecreated=time()-86400;
-    $insertrecord->timemodified=time()-86400;
+    $insertrecord->timecreated=time();
+    $insertrecord->timemodified=time();
     $DB->insert_record('local_practice',$insertrecord);
     redirect(new moodle_url('/local/practice/index.php'));
 }else{
@@ -51,6 +51,7 @@ if($fromform=$mform->get_data()){
     $mform->display();
     echo $OUTPUT->footer();
 }
+
 
 
 
