@@ -52,7 +52,7 @@ class main implements \renderable, \templatable {
 
         foreach($records as $record){
             $timecreated=date('d/m/Y H:i:s',$record->timemodified);
-            $data[]=array('firstname'=>$record->firstname,'lastname'=>$record->lastname,'email'=>$record->email);
+            $data[]=array('firstname'=>$record->firstname,'lastname'=>$record->lastname,'email'=>$record->email, 'timecreated'=>$timecreated);
         }
         return array('data'=>$data);
     }

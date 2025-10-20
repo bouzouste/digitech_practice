@@ -38,11 +38,12 @@ $mform = new practice_form(null);
 if($fromform=$mform->get_data()){
     $insertrecord=new stdClass();
     $insertrecord->firstname=$fromform->firstname;
-    $insertrecord->lastname=$fromform->firstname;
+    $insertrecord->lastname=$fromform->lastname;
     $insertrecord->email=$fromform->email;
     $insertrecord->timecreated=time()-86400;
+    $insertrecord->timemodified=time()-86400;
     $DB->insert_record('local_practice',$insertrecord);
-    redirect(new moodle_url('/local/practice/lndex.php'));
+    redirect(new moodle_url('/local/practice/index.php'));
 }else{
     $indexview=new main();
     echo $OUTPUT->header();
